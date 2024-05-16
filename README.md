@@ -15,6 +15,8 @@ Github: https://github.com/availproject/avail/releases
 https://faucet.avail.tools/
 # Explorer
 https://explorer.avail.so/#/explorer
+# Telemetry
+https://telemetry.avail.so/#list/0xd3d2f3a3495dc597434a99d7d449ebad6616db45e4e4f178f31cc6fa14378b70
 # Public RPC
 ```
 https://avail-turing-rpc.nodesync.top
