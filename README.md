@@ -13,7 +13,8 @@ Github: https://github.com/availproject/avail/releases
 
 # Faucet
 https://faucet.avail.tools/
-
+# Explorer
+https://explorer.avail.so/#/explorer
 # Public RPC
 ```
 https://avail-turing-rpc.nodesync.top
