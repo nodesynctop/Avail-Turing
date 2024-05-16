@@ -76,6 +76,10 @@ sudo systemctl status availd
 ```
 sudo journalctl -u availd -f -o cat
 ```
+# Session Keys
+```
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
+```
 # Snapshot
 ```
 sudo systemctl stop availd
