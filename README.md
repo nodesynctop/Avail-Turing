@@ -67,7 +67,7 @@ EOF
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable availd
-sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
+sudo systemctl restart availd 
 ```
 # Check service & logs:
 ```
