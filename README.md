@@ -21,3 +21,53 @@ https://avail-turing-rpc.nodesync.top
 ```
 wss://avail-turing-rpc.nodesync.top
 ```
+# Server preparation
+System: Ubuntu 22.04
+```
+sudo apt update
+sudo apt install wget curl make clang pkg-config libssl-dev build-essential -y
+```
+# Download the binary file
+```
+sudo mkdir -p $HOME/avail-node && cd $HOME/avail-node
+sudo wget https://github.com/availproject/avail/releases/download/v2.2.1.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+sudo tar xvzf x86_64-ubuntu-2204-data-avail.tar.gz
+sudo rm -rf x86_64-ubuntu-2204-avail-node.tar.gz
+sudo chmod +x avail-node
+cd $HOME
+```
+# Create a service 
+NOTE: Change the section that says NodeSync.Top, your display name in explorer...
+```
+yournodename="NodeSync.Top"
+```
+```
+sudo tee /etc/systemd/system/availd.service > /dev/null <<'EOF'
+[Unit]
+Description=Avail Turing Validator
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+User=root
+Type=simple
+Restart=always
+RestartSec=120
+ExecStart=$HOME/avail-node/avail-node -d $HOME/avail-node/node-data --chain turing --validator --name $yournodename
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable availd
+sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
+```
+# Check service & logs:
+```
+sudo systemctl status availd
+```
+```
+sudo journalctl -u availd -f -o cat
+```
