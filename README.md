@@ -27,7 +27,7 @@ wss://avail-turing-rpc.nodesync.top
 ### use RPC
 https://explorer.avail.so/?rpc=wss://avail-turing-rpc.nodesync.top
 # Server preparation
-System: Ubuntu 22.04
+System: `**Ubuntu 22.04**`
 ```
 sudo apt update
 sudo apt install wget curl make clang pkg-config libssl-dev build-essential jq lz4 gcc unzip snapd -y
@@ -87,5 +87,17 @@ rm -rf avail-turing-snap.tar.lz4
 ```
 sudo systemctl restart availd
 sudo journalctl -u availd -f -o cat
+# Upgrade
+```
+cd $HOME && sudo systemctl stop availd.service && cd $HOME/avail-node
+rm -rf avail-node
+wget https://github.com/availproject/avail/releases/download/v2.2.1.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
+rm -rf x86_64-ubuntu-2204-avail-node.tar.gz
+cd $HOME
+sudo systemctl daemon-reload
+sudo systemctl enable availd
+sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
+```
 ```
 
