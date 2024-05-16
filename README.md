@@ -24,6 +24,8 @@ https://avail-turing-rpc.nodesync.top
 ```
 wss://avail-turing-rpc.nodesync.top
 ```
+### use RPC
+https://explorer.avail.so/?rpc=wss://avail-turing-rpc.nodesync.top
 # Server preparation
 System: Ubuntu 22.04
 ```
