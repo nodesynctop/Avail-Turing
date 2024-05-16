@@ -30,7 +30,7 @@ https://explorer.avail.so/?rpc=wss://avail-turing-rpc.nodesync.top
 System: Ubuntu 22.04
 ```
 sudo apt update
-sudo apt install wget curl make clang pkg-config libssl-dev build-essential -y
+sudo apt install wget curl make clang pkg-config libssl-dev build-essential jq lz4 gcc unzip -y
 ```
 # Download the binary file
 ```
