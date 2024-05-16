@@ -30,7 +30,7 @@ https://explorer.avail.so/?rpc=wss://avail-turing-rpc.nodesync.top
 System: Ubuntu 22.04
 ```
 sudo apt update
-sudo apt install wget curl make clang pkg-config libssl-dev build-essential jq lz4 gcc unzip -y
+sudo apt install wget curl make clang pkg-config libssl-dev build-essential jq lz4 gcc unzip snapd -y
 ```
 # Download the binary file
 ```
@@ -76,3 +76,16 @@ sudo systemctl status availd
 ```
 sudo journalctl -u availd -f -o cat
 ```
+# Snapshot
+```
+sudo systemctl stop availd
+rm -rf $HOME/avail-node/node-data/chains/avail_turing_network/paritydb
+wget https://files.nodesync.top/Avail-Turing/avail-turing-snap.tar.lz4 
+lz4 -c -d avail-turing-snap.tar.lz4 | tar -x -C $HOME/avail-node/node-data/chains/avail_turing_network/
+rm -rf avail-turing-snap.tar.lz4
+```
+```
+sudo systemctl restart availd
+sudo journalctl -u availd -f -o cat
+```
+
