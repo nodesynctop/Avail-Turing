@@ -37,7 +37,7 @@ sudo chmod +x avail-node
 cd $HOME
 ```
 # Create a service 
-NOTE: Change the section that says NodeSync.Top, your display name in explorer...
+NOTE: Change the section that says `NodeSync.Top`, your display name in explorer...
 ```
 yournodename="NodeSync.Top"
 ```
