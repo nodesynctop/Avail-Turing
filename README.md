@@ -87,6 +87,7 @@ rm -rf avail-turing-snap.tar.lz4
 ```
 sudo systemctl restart availd
 sudo journalctl -u availd -f -o cat
+```
 # Upgrade
 ```
 cd $HOME && sudo systemctl stop availd.service && cd $HOME/avail-node
@@ -99,5 +100,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable availd
 sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 ```
-```
+
 
