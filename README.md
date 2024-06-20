@@ -96,7 +96,7 @@ sudo journalctl -u availd -f -o cat
 ```
 cd $HOME && sudo systemctl stop availd.service && cd $HOME/avail-node
 rm -rf avail-node
-wget https://github.com/availproject/avail/releases/download/v2.2.3.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.2.4.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
 tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
 rm -rf x86_64-ubuntu-2204-avail-node.tar.gz
 cd $HOME
